@@ -59,14 +59,15 @@ Breakpoints: desktop ≥ 1200px (80px gutter), tablet 768–1199px (32px), phone
 
 ## Still to do
 
-- **Images.** Figma asset downloads were blocked from the build environment, so
-  `assets/images/*.svg` are placeholders. The hero photo (`hero-lab.webp`) is now a
-  real image; still need the product render and the article photo — export them
-  from Figma and update the `src` paths in `index.html`.
-- **Logo.** The navbar/footer logo is a text-based placeholder (`#logo-wordmark` in
-  the sprite). Replace the two `<svg class="logo …">` elements with the exported logo.
-- The blue artwork behind the Core Value and CTA blocks is recreated with CSS
-  gradients (`.brand-surface` in `base.css`); set `--brand-surface-image` to use the
-  exported bitmap instead.
+- **Images.** The hero photo, product render, article photo and the Core Value/CTA
+  background are now real images (`assets/images/hero-lab.webp`, `product-uv-vis.png`,
+  `article-lab.webp`, `cta-bg.webp`), supplied directly rather than exported from the
+  Figma file. The same product and article images repeat across all 6/3 cards, and
+  the same CTA background repeats on the Core Value and CTA sections via
+  `--brand-surface-image` in `base.css`, set inline on each `.brand-surface` element
+  in `index.html` — swap in per-product renders and a second article photo when
+  available.
+- **Logo.** The navbar/footer logo is still a text-based placeholder (`#logo-wordmark`
+  in the sprite). Replace the two `<svg class="logo …">` elements with the exported logo.
 - Partner logos in the social-proof marquee are text placeholders (the Figma uses "Logoipsum" placeholders too).
 - The Produk dropdown and the ID/EN language switcher are visual only (no menu content or translations yet).
