@@ -60,8 +60,9 @@ Breakpoints: desktop ≥ 1200px (80px gutter), tablet 768–1199px (32px), phone
 ## Still to do
 
 - **Images.** Figma asset downloads were blocked from the build environment, so
-  `assets/images/*.svg` are placeholders. Export the hero photo, the product render
-  and the article photo from Figma and replace the `src` paths in `index.html`.
+  `assets/images/*.svg` are placeholders. The hero photo (`hero-lab.webp`) is now a
+  real image; still need the product render and the article photo — export them
+  from Figma and update the `src` paths in `index.html`.
 - **Logo.** The navbar/footer logo is a text-based placeholder (`#logo-wordmark` in
   the sprite). Replace the two `<svg class="logo …">` elements with the exported logo.
 - The blue artwork behind the Core Value and CTA blocks is recreated with CSS
