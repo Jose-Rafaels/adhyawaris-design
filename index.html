@@ -7,8 +7,13 @@
       name="description"
       content="PT Adhya Waris Saintifik — distributor resmi instrumen laboratorium analitikal dan produk bersertifikasi TKDN di Indonesia."
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Adhya Waris Saintifik — Solusi Instrumen Laboratorium</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
     <script>
       // Apply the saved/system theme before first paint to avoid a flash.
       (function () {
@@ -22,9 +27,551 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
+    <script src="assets/js/main.js" defer></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Icon sprite: Phosphor icons (regular), referenced with <use href="#i-name" />. -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z" /></symbol>
+      <symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" /></symbol>
+      <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" /></symbol>
+      <symbol id="i-magnifying-glass" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" /></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z" /></symbol>
+      <symbol id="i-seal-check" viewBox="0 0 256 256"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z" /></symbol>
+      <symbol id="i-target" viewBox="0 0 256 256"><path d="M221.87,83.16A104.1,104.1,0,1,1,195.67,49l22.67-22.68a8,8,0,0,1,11.32,11.32l-96,96a8,8,0,0,1-11.32-11.32l27.72-27.72a40,40,0,1,0,17.87,31.09,8,8,0,1,1,16-.9,56,56,0,1,1-22.38-41.65L184.3,60.39a87.88,87.88,0,1,0,23.13,29.67,8,8,0,0,1,14.44-6.9Z" /></symbol>
+      <symbol id="i-wrench" viewBox="0 0 256 256"><path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z" /></symbol>
+      <symbol id="i-stack" viewBox="0 0 256 256"><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.06,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z" /></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z" /></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z" /></symbol>
+      <symbol id="logo-wordmark" viewBox="0 0 115 32">
+        <text x="0" y="21" fill="currentColor" font-weight="800" font-size="24" letter-spacing="0.5" textLength="115" lengthAdjust="spacingAndGlyphs">ADHYA</text>
+        <text x="1" y="30.5" fill="currentColor" font-weight="600" font-size="6" textLength="112" lengthAdjust="spacing">WARIS SAINTIFIK</text>
+      </symbol>
+    </svg>
+
+    <!-- ============ Navbar ============ -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a class="navbar__brand" href="index.html" aria-label="Adhya Waris Saintifik — Beranda">
+          <svg class="logo navbar__logo" role="img" aria-label="Adhya Waris Saintifik"><use href="#logo-wordmark" /></svg>
+        </a>
+
+        <nav class="navbar__nav" aria-label="Navigasi utama">
+          <a class="navbar__link text-body-base-medium" href="index.html" aria-current="page">Home</a>
+          <a class="navbar__link text-body-base-medium" href="#produk">
+            Produk
+            <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+          </a>
+          <a class="navbar__link text-body-base-medium" href="#artikel">Artikel &amp; Berita</a>
+          <a class="navbar__link text-body-base-medium" href="#tentang">Tentang Kami</a>
+          <a class="navbar__link text-body-base-medium" href="#kontak">Hubungi Kami</a>
+        </nav>
+
+        <div class="navbar__options">
+          <button class="navbar__icon-button" type="button" data-theme-toggle aria-label="Ganti tema">
+            <svg class="icon" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <span class="navbar__divider" aria-hidden="true"></span>
+          <button class="navbar__language text-body-base-medium" type="button" aria-label="Bahasa: Indonesia">
+            ID
+            <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+          </button>
+          <button
+            class="navbar__menu-button"
+            type="button"
+            data-menu-toggle
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Buka menu"
+          >
+            <svg class="icon icon--18 icon--open" aria-hidden="true"><use href="#i-list" /></svg>
+            <svg class="icon icon--18 icon--close" aria-hidden="true"><use href="#i-x" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="navbar__mobile-menu" hidden>
+        <nav class="container navbar__nav" aria-label="Navigasi utama (seluler)">
+          <a class="navbar__link text-body-base-medium" href="index.html" aria-current="page">Home</a>
+          <a class="navbar__link text-body-base-medium" href="#produk">
+            Produk
+            <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+          </a>
+          <a class="navbar__link text-body-base-medium" href="#artikel">Artikel &amp; Berita</a>
+          <a class="navbar__link text-body-base-medium" href="#tentang">Tentang Kami</a>
+          <a class="navbar__link text-body-base-medium" href="#kontak">Hubungi Kami</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ Hero ============ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__media" aria-hidden="true">
+          <img src="assets/images/hero-lab.svg" alt="" />
+        </div>
+
+        <div class="hero__content">
+          <div class="hero__copy">
+            <h1 id="hero-title" class="hero__title text-heading-5xl">
+              Solusi Instrumen Laboratorium Berpresisi dan Berkelanjutan
+            </h1>
+            <p class="hero__subtitle text-body-xl-regular">
+              Dapatkan alat analitik berkualitas terbaik yang disesuaikan dengan kebutuhan fasilitas Anda, lengkap
+              dengan jaminan servis dan pendampingan aplikasi
+            </p>
+          </div>
+
+          <form class="hero__search" role="search" data-hero-search>
+            <div class="search-field">
+              <svg class="icon" aria-hidden="true"><use href="#i-magnifying-glass" /></svg>
+              <label class="sr-only" for="hero-search">Cari produk</label>
+              <input
+                id="hero-search"
+                class="search-field__input"
+                type="search"
+                name="q"
+                placeholder="Cari instrumen lab, spesifikasi alat, atau sektor industri..."
+              />
+            </div>
+            <button class="button" type="submit">Cari Produk</button>
+          </form>
+        </div>
+
+        <div class="hero__proof">
+          <p class="hero__proof-label text-body-base-medium">Didukung oleh Brand Analitik Terpercaya</p>
+          <div class="marquee">
+            <!-- The list is repeated so the scroll animation loops seamlessly. -->
+            <ul class="marquee__track">
+              <li class="marquee__item">Logoipsum</li>
+              <li class="marquee__item">IPSUM</li>
+              <li class="marquee__item">LOQO</li>
+              <li class="marquee__item">Logoipsum</li>
+              <li class="marquee__item">Logoipsum</li>
+              <li class="marquee__item">LUM</li>
+              <li class="marquee__item">IPSUM</li>
+              <li class="marquee__item">LOQO</li>
+              <li class="marquee__item" aria-hidden="true">Logoipsum</li>
+              <li class="marquee__item" aria-hidden="true">IPSUM</li>
+              <li class="marquee__item" aria-hidden="true">LOQO</li>
+              <li class="marquee__item" aria-hidden="true">Logoipsum</li>
+              <li class="marquee__item" aria-hidden="true">Logoipsum</li>
+              <li class="marquee__item" aria-hidden="true">LUM</li>
+              <li class="marquee__item" aria-hidden="true">IPSUM</li>
+              <li class="marquee__item" aria-hidden="true">LOQO</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Showcase Product ============ -->
+      <section id="produk" class="showcase" aria-labelledby="showcase-title">
+        <div class="container showcase__inner">
+          <div class="section-heading">
+            <h2 id="showcase-title" class="section-heading__title text-heading-3xl">
+              Instrumen Analitikal Berpresisi Tinggi untuk <span class="text-gradient">Laboratorium Anda</span>
+            </h2>
+            <a class="button" href="#produk">Jelajahi Seluruh Produk</a>
+          </div>
+
+          <div class="showcase__grid">
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/images/product-uv-vis.svg" alt="" loading="lazy" />
+              <div class="product-card__tags">
+                <span class="badge badge--red text-label-xs">TKDN 40,36%</span>
+                <span class="badge badge--blue text-label-xs">e-Katalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category text-body-xs-medium">Spectrophotometry System</p>
+              <div class="product-card__info">
+                <h3 class="product-card__name text-body-base-semibold">
+                  <a href="#produk">SUV-1200 Series UV-Vis Double Beam</a>
+                </h3>
+                <p class="product-card__description text-body-sm-regular">
+                  Spektrofotometer berkas ganda dengan layar sentuh 10,1 inci dan memori internal 1024 MB untuk pengujian
+                  mandiri tanpa PC.
+                </p>
+              </div>
+              <span class="product-card__link text-body-sm-medium" aria-hidden="true">
+                Detail Spesifikasi
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/images/product-uv-vis.svg" alt="" loading="lazy" />
+              <div class="product-card__tags">
+                <span class="badge badge--red text-label-xs">TKDN 40,36%</span>
+                <span class="badge badge--blue text-label-xs">e-Katalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category text-body-xs-medium">Spectrophotometry System</p>
+              <div class="product-card__info">
+                <h3 class="product-card__name text-body-base-semibold">
+                  <a href="#produk">SUV-1200 Series UV-Vis Double Beam</a>
+                </h3>
+                <p class="product-card__description text-body-sm-regular">
+                  Spektrofotometer berkas ganda dengan layar sentuh 10,1 inci dan memori internal 1024 MB untuk pengujian
+                  mandiri tanpa PC.
+                </p>
+              </div>
+              <span class="product-card__link text-body-sm-medium" aria-hidden="true">
+                Detail Spesifikasi
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/images/product-uv-vis.svg" alt="" loading="lazy" />
+              <div class="product-card__tags">
+                <span class="badge badge--red text-label-xs">TKDN 40,36%</span>
+                <span class="badge badge--blue text-label-xs">e-Katalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category text-body-xs-medium">Spectrophotometry System</p>
+              <div class="product-card__info">
+                <h3 class="product-card__name text-body-base-semibold">
+                  <a href="#produk">SUV-1200 Series UV-Vis Double Beam</a>
+                </h3>
+                <p class="product-card__description text-body-sm-regular">
+                  Spektrofotometer berkas ganda dengan layar sentuh 10,1 inci dan memori internal 1024 MB untuk pengujian
+                  mandiri tanpa PC.
+                </p>
+              </div>
+              <span class="product-card__link text-body-sm-medium" aria-hidden="true">
+                Detail Spesifikasi
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/images/product-uv-vis.svg" alt="" loading="lazy" />
+              <div class="product-card__tags">
+                <span class="badge badge--red text-label-xs">TKDN 40,36%</span>
+                <span class="badge badge--blue text-label-xs">e-Katalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category text-body-xs-medium">Spectrophotometry System</p>
+              <div class="product-card__info">
+                <h3 class="product-card__name text-body-base-semibold">
+                  <a href="#produk">SUV-1200 Series UV-Vis Double Beam</a>
+                </h3>
+                <p class="product-card__description text-body-sm-regular">
+                  Spektrofotometer berkas ganda dengan layar sentuh 10,1 inci dan memori internal 1024 MB untuk pengujian
+                  mandiri tanpa PC.
+                </p>
+              </div>
+              <span class="product-card__link text-body-sm-medium" aria-hidden="true">
+                Detail Spesifikasi
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/images/product-uv-vis.svg" alt="" loading="lazy" />
+              <div class="product-card__tags">
+                <span class="badge badge--red text-label-xs">TKDN 40,36%</span>
+                <span class="badge badge--blue text-label-xs">e-Katalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category text-body-xs-medium">Spectrophotometry System</p>
+              <div class="product-card__info">
+                <h3 class="product-card__name text-body-base-semibold">
+                  <a href="#produk">SUV-1200 Series UV-Vis Double Beam</a>
+                </h3>
+                <p class="product-card__description text-body-sm-regular">
+                  Spektrofotometer berkas ganda dengan layar sentuh 10,1 inci dan memori internal 1024 MB untuk pengujian
+                  mandiri tanpa PC.
+                </p>
+              </div>
+              <span class="product-card__link text-body-sm-medium" aria-hidden="true">
+                Detail Spesifikasi
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/images/product-uv-vis.svg" alt="" loading="lazy" />
+              <div class="product-card__tags">
+                <span class="badge badge--red text-label-xs">TKDN 40,36%</span>
+                <span class="badge badge--blue text-label-xs">e-Katalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category text-body-xs-medium">Spectrophotometry System</p>
+              <div class="product-card__info">
+                <h3 class="product-card__name text-body-base-semibold">
+                  <a href="#produk">SUV-1200 Series UV-Vis Double Beam</a>
+                </h3>
+                <p class="product-card__description text-body-sm-regular">
+                  Spektrofotometer berkas ganda dengan layar sentuh 10,1 inci dan memori internal 1024 MB untuk pengujian
+                  mandiri tanpa PC.
+                </p>
+              </div>
+              <span class="product-card__link text-body-sm-medium" aria-hidden="true">
+                Detail Spesifikasi
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </span>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Core Value ============ -->
+      <section id="tentang" class="core-value" aria-labelledby="core-value-title">
+        <div class="container core-value__inner">
+          <div class="core-value__card brand-surface">
+            <div class="core-value__header">
+              <h2 id="core-value-title" class="core-value__title text-heading-3xl">
+                Solusi Terpercaya untuk Standar Laboratorium Modern
+              </h2>
+              <p class="core-value__lead text-body-base-regular">
+                Menggabungkan rekam jejak teruji, kepatuhan regulasi TKDN, dan dukungan teknis menyeluruh.
+              </p>
+            </div>
+
+            <ul class="core-value__stats">
+            <li class="core-value__stat">
+              <p class="core-value__stat-value text-heading-4xl">10+ Tahun</p>
+              <p class="core-value__stat-label text-body-base-regular">Pengalaman Industri</p>
+            </li>
+            <li class="core-value__stat-divider" role="presentation"></li>
+            <li class="core-value__stat">
+              <p class="core-value__stat-value text-heading-4xl">150+</p>
+              <p class="core-value__stat-label text-body-base-regular">Mitra Lab &amp; Riset</p>
+            </li>
+            <li class="core-value__stat-divider" role="presentation"></li>
+            <li class="core-value__stat">
+              <p class="core-value__stat-value text-heading-4xl">40%+</p>
+              <p class="core-value__stat-label text-body-base-regular">Sertifikasi TKDN</p>
+            </li>
+            </ul>
+
+            <ul class="core-value__features">
+            <li class="core-value__feature">
+              <svg class="icon icon--32" aria-hidden="true"><use href="#i-seal-check" /></svg>
+              <div class="core-value__feature-text">
+                <h3 class="core-value__feature-title text-body-lg-semibold">Sertifikasi TKDN Resmi</h3>
+                <p class="core-value__feature-description text-body-base-regular">Mendukung kelancaran pengadaan instrumen berstandar TKDN untuk riset dan industri.</p>
+              </div>
+            </li>
+            <li class="core-value__feature">
+              <svg class="icon icon--32" aria-hidden="true"><use href="#i-target" /></svg>
+              <div class="core-value__feature-text">
+                <h3 class="core-value__feature-title text-body-lg-semibold">Akurasi &amp; Presisi Tinggi</h3>
+                <p class="core-value__feature-description text-body-base-regular">Teknologi optik mutakhir untuk menjamin konsistensi dan validitas hasil pengujian.</p>
+              </div>
+            </li>
+            <li class="core-value__feature">
+              <svg class="icon icon--32" aria-hidden="true"><use href="#i-wrench" /></svg>
+              <div class="core-value__feature-text">
+                <h3 class="core-value__feature-title text-body-lg-semibold">Dukungan Purna Jual</h3>
+                <p class="core-value__feature-description text-body-base-regular">Garansi resmi, instalasi, kalibrasi, dan pendampingan oleh teknisi bersertifikat.</p>
+              </div>
+            </li>
+            <li class="core-value__feature">
+              <svg class="icon icon--32" aria-hidden="true"><use href="#i-stack" /></svg>
+              <div class="core-value__feature-text">
+                <h3 class="core-value__feature-title text-body-lg-semibold">Ekosistem Terintegrasi</h3>
+                <p class="core-value__feature-description text-body-base-regular">Solusi utuh perangkat analitikal, software olah data, hingga sistem proteksi daya.</p>
+              </div>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Article & News ============ -->
+      <section id="artikel" class="articles" aria-labelledby="articles-title">
+        <div class="container articles__inner">
+          <div class="section-heading">
+            <h2 id="articles-title" class="section-heading__title text-heading-3xl" style="--title-width: 433px">
+              Wawasan Terkini Seputar <span class="text-gradient">Industri &amp; Laboratorium</span>
+            </h2>
+            <a class="button" href="#artikel">Jelajahi Seluruh Artikel</a>
+          </div>
+
+          <div class="articles__grid">
+          <article class="article-card">
+            <div class="article-card__media">
+              <img class="article-card__image" src="assets/images/article-lab.svg" alt="" loading="lazy" />
+            </div>
+            <div class="article-card__body">
+              <p class="article-card__category text-body-xs-medium">Regulasi &amp; TKDN</p>
+              <div class="article-card__info">
+                <h3 class="article-card__title text-body-base-semibold">
+                  <a href="#artikel">Cara Mengoptimalkan Akurasi Pengukuran Spektrofotometer UV-Vis</a>
+                </h3>
+                <p class="article-card__excerpt text-body-sm-regular">
+                  Langkah-langkah praktis menjaga kestabilan optik dan presisi pengujian sampel harian Anda.
+                </p>
+              </div>
+              <div class="article-card__meta">
+                <p class="article-card__date text-body-xs-regular">12 Mei 2026 • 4 min</p>
+                <span class="article-card__read-more text-body-xs-semibold" aria-hidden="true">
+                  Baca Selengkapnya
+                  <svg class="icon icon--16" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </span>
+              </div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-card__media">
+              <img class="article-card__image" src="assets/images/article-lab.svg" alt="" loading="lazy" />
+            </div>
+            <div class="article-card__body">
+              <p class="article-card__category text-body-xs-medium">Regulasi &amp; TKDN</p>
+              <div class="article-card__info">
+                <h3 class="article-card__title text-body-base-semibold">
+                  <a href="#artikel">Cara Mengoptimalkan Akurasi Pengukuran Spektrofotometer UV-Vis</a>
+                </h3>
+                <p class="article-card__excerpt text-body-sm-regular">
+                  Langkah-langkah praktis menjaga kestabilan optik dan presisi pengujian sampel harian Anda.
+                </p>
+              </div>
+              <div class="article-card__meta">
+                <p class="article-card__date text-body-xs-regular">12 Mei 2026 • 4 min</p>
+                <span class="article-card__read-more text-body-xs-semibold" aria-hidden="true">
+                  Baca Selengkapnya
+                  <svg class="icon icon--16" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </span>
+              </div>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-card__media">
+              <img class="article-card__image" src="assets/images/article-lab.svg" alt="" loading="lazy" />
+            </div>
+            <div class="article-card__body">
+              <p class="article-card__category text-body-xs-medium">Regulasi &amp; TKDN</p>
+              <div class="article-card__info">
+                <h3 class="article-card__title text-body-base-semibold">
+                  <a href="#artikel">Cara Mengoptimalkan Akurasi Pengukuran Spektrofotometer UV-Vis</a>
+                </h3>
+                <p class="article-card__excerpt text-body-sm-regular">
+                  Langkah-langkah praktis menjaga kestabilan optik dan presisi pengujian sampel harian Anda.
+                </p>
+              </div>
+              <div class="article-card__meta">
+                <p class="article-card__date text-body-xs-regular">12 Mei 2026 • 4 min</p>
+                <span class="article-card__read-more text-body-xs-semibold" aria-hidden="true">
+                  Baca Selengkapnya
+                  <svg class="icon icon--16" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </span>
+              </div>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="container cta__inner">
+          <div class="cta__card brand-surface">
+            <div class="cta__content">
+              <div class="cta__copy">
+                <h2 id="cta-title" class="cta__title text-heading-5xl">
+                  Butuh Penawaran Harga atau<br />
+                  Konsultasi Teknis?
+                </h2>
+                <p class="cta__description text-body-base-regular">
+                  Diskusikan kebutuhan fasilitas pengujian Anda secara mendalam—mulai dari pemilihan unit instrumen
+                  analitis, perencanaan sistem integrasi, hingga skema garansi purna jual dan pendampingan aplikasi
+                  langsung oleh teknisi bersertifikat
+                </p>
+              </div>
+              <a class="button" href="#kontak">Konsultasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer id="kontak" class="footer">
+      <div class="container footer__inner">
+        <div class="footer__content">
+          <div class="footer__about">
+            <svg class="logo logo--inverse footer__logo" role="img" aria-label="Adhya Waris Saintifik"><use href="#logo-wordmark" /></svg>
+            <p class="text-body-base-regular">
+              Distributor resmi instrumen laboratorium analitikal terpercaya dan pengembang produk bersertifikasi TKDN di
+              Indonesia.
+            </p>
+            <address class="footer__address text-body-base-regular">
+              <svg class="icon" aria-hidden="true"><use href="#i-map-pin" /></svg>
+              Ruko Arya Kemuning Blok A No. 4, Cilodong, Kota Depok, Jawa Barat 16415
+            </address>
+          </div>
+
+          <div class="footer__columns">
+            <nav class="footer__column" aria-labelledby="footer-company">
+              <h2 id="footer-company" class="footer__column-title text-body-sm-semibold">COMPANY</h2>
+              <ul class="footer__links text-body-base-regular">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#artikel">Artikel &amp; Berita</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#kontak">Hubungi Kami</a></li>
+              </ul>
+            </nav>
+
+            <div class="footer__column">
+              <h2 class="footer__column-title text-body-sm-semibold">CONTACT</h2>
+              <ul class="footer__links text-body-base-regular">
+                <li><a href="tel:+622138741115">+62 21 38741115</a></li>
+                <li><a href="mailto:info@adhyawaris.co.id">info@adhyawaris.co.id</a></li>
+                <li><a href="https://www.adhyawaris.co.id">www.adhyawaris.co.id</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h2 class="footer__column-title text-body-sm-semibold">SOCIAL MEDIA</h2>
+              <ul class="footer__links text-body-base-regular">
+                <li>
+                  <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">
+                    Tiktok
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+                    Instagram
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+                    Facebook
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                    LinkedIn
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer__copyright text-body-base-regular">© 2026 PT Adhya Waris Saintifik. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
