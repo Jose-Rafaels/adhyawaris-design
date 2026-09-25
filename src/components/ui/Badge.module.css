@@ -1,0 +1,20 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-1) var(--spacing-2-5);
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-neutral-primary-normal);
+  white-space: nowrap;
+}
+
+.red {
+  border-color: var(--color-border-brand-red-secondary);
+  color: var(--color-text-brand-red-hover);
+}
+
+.blue {
+  border-color: var(--color-border-brand-blue-secondary);
+  color: var(--color-text-brand-blue-hover);
+}

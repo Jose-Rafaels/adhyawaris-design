@@ -1,0 +1,145 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-surface-neutral-primary-normal);
+  border-bottom: 1px solid var(--color-border-inverse-soft);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  padding-block: var(--spacing-6);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  width: 136px;
+  height: 32px;
+}
+
+.logo {
+  width: 115px;
+  height: 32px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  color: var(--color-text-neutral-secondary);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  transition: color 150ms ease;
+}
+
+.navLink:hover {
+  color: var(--color-text-brand-blue-hover);
+}
+
+.navLink[aria-current='page'] {
+  color: var(--color-text-brand-blue-default);
+  font-weight: var(--font-weight-semibold);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-1-5);
+  border-radius: var(--radius-full);
+  color: var(--color-text-neutral-secondary);
+  transition: background-color 150ms ease;
+}
+
+.iconButton:hover {
+  background: var(--color-surface-neutral-secondary-medium);
+}
+
+.divider {
+  width: 1px;
+  height: 12px;
+  background: var(--color-text-neutral-disabled);
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  color: var(--color-text-neutral-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.menuButton {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+/* ---- Phone / tablet ---- */
+
+@media (max-width: 1023px) {
+  .inner {
+    padding-block: var(--spacing-4);
+  }
+
+  .logo {
+    width: 87px;
+    height: 24px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .options {
+    gap: var(--spacing-1-5);
+  }
+
+  .language {
+    gap: var(--spacing-0-5);
+  }
+
+  .menuButton {
+    display: flex;
+    color: var(--color-text-neutral-secondary);
+  }
+
+  .mobileMenu {
+    display: block;
+    border-top: 1px solid var(--color-border-inverse-soft);
+    background: var(--color-surface-neutral-primary-normal);
+  }
+
+  .mobileMenu[hidden] {
+    display: none;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    padding-block: var(--spacing-2);
+  }
+
+  .mobileNav .navLink {
+    justify-content: space-between;
+    padding-block: var(--spacing-3);
+  }
+}

@@ -1,0 +1,141 @@
+/*
+ * Adhya Waris design tokens — mirrored from the Figma "Style Guide" variables.
+ * Names follow the Figma variable paths (Color/Surface/Neutral/Primary-normal →
+ * --color-surface-neutral-primary-normal). Light is the default mode; dark mode
+ * values come from the Figma dark variable mode.
+ */
+
+:root {
+  /* ---- Typography ---- */
+  --font-base: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+
+  --leading-4: 16px;
+  --leading-5: 20px;
+  --leading-6: 24px;
+  --leading-7: 28px;
+  --leading-9: 36px;
+  --leading-11: 44px;
+  --leading-heading: 60px;
+
+  --tracking-normal: 0;
+
+  /* ---- Spacing ---- */
+  --spacing-0: 0;
+  --spacing-0-5: 2px;
+  --spacing-1: 4px;
+  --spacing-1-5: 6px;
+  --spacing-2: 8px;
+  --spacing-2-5: 10px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-4-5: 18px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-14: 56px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-28: 112px;
+
+  /* ---- Border ---- */
+  --border-width: 1px;
+  --radius-0: 0;
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-base: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ---- Layout ---- */
+  --container-max: 1280px;
+  --page-gutter: var(--spacing-20);
+
+  /* ---- Color: light mode ---- */
+  color-scheme: light;
+
+  --color-text-brand-blue-default: #002d62;
+  --color-text-brand-blue-hover: #1e40af;
+  --color-text-brand-red-hover: #b91c1c;
+  --color-text-neutral-primary: #0f172a;
+  --color-text-neutral-secondary: #475569;
+  --color-text-neutral-tertiary: #64748b;
+  --color-text-neutral-disabled: #cbd5e1;
+  --color-text-neutral-white: #f8fafc;
+  --color-text-inverse-normal: #f8fafc;
+  --color-text-inverse-soft: #e2e8f0;
+
+  --color-surface-neutral-primary-normal: #f8fafc;
+  --color-surface-neutral-secondary-normal: #f1f5f9;
+  --color-surface-neutral-secondary-medium: #e2e8f0;
+  --color-surface-neutral-secondary-strong: #cbd5e1;
+  --color-surface-brand-red-normal: #d81e2c;
+  --color-surface-brand-blue-soft: #eff6ff;
+  --color-surface-brand-blue-strong: #1e40af;
+
+  --color-border-neutral-normal: #e2e8f0;
+  --color-border-inverse-soft: #e2e8f0;
+  --color-border-brand-red-secondary: #fca5a5;
+  --color-border-brand-blue-secondary: #93c5fd;
+
+  /* Not defined in Figma — derived for interaction states. */
+  --color-surface-brand-red-hover: #b91c1c;
+  --color-focus-ring: #60a5fa;
+
+  /* Gradient accent used on highlighted heading words. */
+  --gradient-accent: linear-gradient(90deg, #60a5fa 0%, #002d62 100%);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-text-brand-blue-default: #60a5fa;
+  --color-text-brand-blue-hover: #93c5fd;
+  --color-text-brand-red-hover: #f87171;
+  --color-text-neutral-primary: #f8fafc;
+  --color-text-neutral-secondary: #cbd5e1;
+  --color-text-neutral-tertiary: #64748b;
+  --color-text-neutral-disabled: #475569;
+
+  --color-surface-neutral-primary-normal: #020617;
+  --color-surface-neutral-secondary-medium: #334155;
+  --color-surface-brand-red-normal: #ef4444;
+  --color-surface-brand-blue-soft: #001731;
+
+  --color-border-inverse-soft: #1e293b;
+  --color-border-brand-red-secondary: #f87171;
+  --color-border-brand-blue-secondary: #1e40af;
+
+  --color-surface-brand-red-hover: #dc2626;
+
+  --gradient-accent: linear-gradient(90deg, #93c5fd 0%, #60a5fa 100%);
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --page-gutter: var(--spacing-8);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --page-gutter: var(--spacing-3);
+  }
+}

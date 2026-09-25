@@ -1,0 +1,51 @@
+.field {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2-5);
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--spacing-3);
+  background: var(--color-surface-neutral-secondary-normal);
+  border: var(--border-width) solid var(--color-border-neutral-normal);
+  border-radius: var(--radius-base);
+  transition: border-color 150ms ease;
+}
+
+.field:focus-within {
+  border-color: var(--color-border-brand-blue-secondary);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--color-text-neutral-tertiary);
+}
+
+.input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  /* The field keeps a light surface in both themes (Figma). */
+  color: #0f172a;
+  font-size: var(--font-size-base);
+  line-height: var(--leading-6);
+  text-overflow: ellipsis;
+}
+
+.input::placeholder {
+  color: var(--color-text-neutral-tertiary);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .field {
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+
+  .input {
+    font-size: var(--font-size-sm);
+    line-height: var(--leading-5);
+  }
+}

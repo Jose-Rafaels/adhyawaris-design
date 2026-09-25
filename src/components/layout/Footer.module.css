@@ -1,0 +1,122 @@
+.footer {
+  background: var(--color-surface-brand-blue-strong);
+  color: var(--color-text-inverse-soft);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  padding-block: var(--spacing-16);
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-8);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  max-width: 437px;
+}
+
+.logo {
+  width: 231px;
+  height: 64px;
+}
+
+.address {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-1-5);
+  font-style: normal;
+}
+
+.address svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.columns {
+  display: flex;
+  gap: var(--spacing-8);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  width: 176px;
+}
+
+.columnTitle {
+  color: var(--color-text-inverse-normal);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-0-5);
+  transition: color 150ms ease;
+}
+
+.links a:hover {
+  color: var(--color-text-inverse-normal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.copyright {
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--color-surface-neutral-secondary-strong);
+  color: var(--color-text-inverse-normal);
+  text-align: center;
+}
+
+@media (max-width: 1023px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .columns {
+    flex-wrap: wrap;
+    gap: var(--spacing-8) var(--spacing-6);
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    padding-block: var(--spacing-10);
+  }
+
+  .logo {
+    width: 173px;
+    height: 48px;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .column {
+    width: auto;
+  }
+
+  .copyright {
+    padding-top: var(--spacing-6);
+    font-size: var(--font-size-sm);
+    line-height: var(--leading-5);
+  }
+}
