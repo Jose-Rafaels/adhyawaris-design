@@ -1,4 +1,5 @@
-// Home page interactions: light/dark theme toggle, mobile menu, hero search.
+// Site-wide interactions: light/dark theme toggle, mobile menu, hero search,
+// and (on the Listing Product page) the filter sheet and active-filter chips.
 // The initial theme is applied by the inline script in <head> to avoid a flash.
 
 (function () {
@@ -58,6 +59,63 @@
     searchForm.addEventListener('submit', function (event) {
       event.preventDefault();
       document.getElementById('produk').scrollIntoView();
+    });
+  }
+
+  // ---- Filter panel (Listing Product page) ----
+  // A static sidebar on desktop; below 1024px the same panel becomes a bottom
+  // sheet opened from the "Filter" button in the control bar.
+  var filterToggle = document.querySelector('[data-filter-toggle]');
+  var filterPanel = document.getElementById('filter-panel');
+  var filterBackdrop = document.querySelector('[data-filter-backdrop]');
+
+  function setFilterOpen(open) {
+    filterPanel.classList.toggle('is-open', open);
+    filterBackdrop.classList.toggle('is-open', open);
+    filterToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('no-scroll', open);
+  }
+
+  if (filterToggle && filterPanel && filterBackdrop) {
+    filterToggle.addEventListener('click', function () {
+      setFilterOpen(true);
+    });
+    filterBackdrop.addEventListener('click', function () {
+      setFilterOpen(false);
+    });
+    filterPanel.querySelectorAll('[data-filter-close], [data-filter-apply]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        setFilterOpen(false);
+        filterToggle.focus();
+      });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && filterPanel.classList.contains('is-open')) {
+        setFilterOpen(false);
+        filterToggle.focus();
+      }
+    });
+  }
+
+  // ---- Active filter chips ----
+  // No real filtering behind this static page: removing a chip just clears
+  // its matching checkbox and drops the chip, as a stand-in for re-querying.
+  document.querySelectorAll('[data-chip-remove]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      button.closest('.filter-chip').remove();
+    });
+  });
+
+  // ---- Clear filters ----
+  var clearButton = document.querySelector('[data-filter-clear]');
+  if (clearButton && filterPanel) {
+    clearButton.addEventListener('click', function () {
+      filterPanel.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+        checkbox.checked = false;
+      });
+      document.querySelectorAll('.filter-chip').forEach(function (chip) {
+        chip.remove();
+      });
     });
   }
 })();

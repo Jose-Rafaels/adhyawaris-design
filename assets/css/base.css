@@ -126,6 +126,11 @@ button {
   border: 0;
 }
 
+/* Locks background scroll while an overlay (e.g. the filter sheet) is open. */
+.no-scroll {
+  overflow: hidden;
+}
+
 /* ---- Layout ---- */
 
 .container {
@@ -223,19 +228,20 @@ button {
 }
 
 /*
- * Blue brand surface used behind the Core Value and CTA blocks. Approximates the
- * blurred blue artwork in Figma; set --brand-surface-image to use an exported
- * bitmap instead.
+ * Blue brand surface used behind the Core Value and CTA blocks. The gradient
+ * below is a fallback that approximates the blurred blue artwork in Figma;
+ * elements that have the real photo override it with an inline
+ * `style="background-image: url(...)"` (a plain background-image, not a CSS
+ * custom property — a relative url() inside a custom property resolves
+ * against the *stylesheet's* location rather than the document's, which
+ * 404s here since base.css lives in assets/css/).
  */
 .brand-surface {
   background-color: var(--color-surface-brand-blue-strong);
-  background-image: var(
-    --brand-surface-image,
-    radial-gradient(55% 85% at 12% 0%, rgba(147, 197, 253, 0.85) 0%, rgba(147, 197, 253, 0) 70%),
+  background-image: radial-gradient(55% 85% at 12% 0%, rgba(147, 197, 253, 0.85) 0%, rgba(147, 197, 253, 0) 70%),
     radial-gradient(45% 90% at 88% 85%, rgba(147, 197, 253, 0.9) 0%, rgba(147, 197, 253, 0) 70%),
     radial-gradient(30% 70% at 52% 20%, rgba(96, 165, 250, 0.55) 0%, rgba(96, 165, 250, 0) 75%),
-    linear-gradient(115deg, #1e3a8a 0%, #1e40af 45%, #1d4ed8 100%)
-  );
+    linear-gradient(115deg, #1e3a8a 0%, #1e40af 45%, #1d4ed8 100%);
   background-size: cover;
   background-position: center;
 }
