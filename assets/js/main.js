@@ -118,4 +118,55 @@
       });
     });
   }
+
+  // ---- Tabs (Product Detail page) ----
+  // Standard tablist/tab/tabpanel pattern: click or arrow keys select a tab,
+  // which shows its panel and hides the rest.
+  document.querySelectorAll('[role="tablist"]').forEach(function (tablist) {
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+
+    function selectTab(tab, moveFocus) {
+      tabs.forEach(function (t) {
+        var selected = t === tab;
+        t.setAttribute('aria-selected', String(selected));
+        t.tabIndex = selected ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !selected;
+      });
+      if (moveFocus) tab.focus();
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        selectTab(tab, false);
+      });
+      tab.addEventListener('keydown', function (event) {
+        var newIndex;
+        if (event.key === 'ArrowRight') newIndex = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') newIndex = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') newIndex = 0;
+        else if (event.key === 'End') newIndex = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectTab(tabs[newIndex], true);
+      });
+    });
+  });
+
+  // ---- Product gallery thumbnails (Product Detail page) ----
+  document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+    var mainImage = gallery.querySelector('[data-gallery-main]');
+    var thumbs = gallery.querySelectorAll('[data-gallery-thumb]');
+    if (!mainImage || !thumbs.length) return;
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        mainImage.src = thumb.querySelector('img').src;
+        thumbs.forEach(function (t) {
+          t.removeAttribute('aria-current');
+        });
+        thumb.setAttribute('aria-current', 'true');
+      });
+    });
+  });
 })();

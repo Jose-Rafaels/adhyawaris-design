@@ -21,7 +21,13 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-1-5);
+  min-width: 0;
   color: var(--color-text-neutral-secondary);
+}
+
+.breadcrumb a,
+.breadcrumb .icon {
+  flex-shrink: 0;
 }
 
 .breadcrumb a {
@@ -33,8 +39,12 @@
 }
 
 .breadcrumb__current {
+  overflow: hidden;
+  min-width: 0;
   color: var(--color-text-neutral-primary);
   font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .page-hero__title {
