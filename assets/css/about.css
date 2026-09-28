@@ -395,7 +395,7 @@
 .standar__list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3);
+  gap: var(--spacing-3-5);
 }
 
 .standar__item {

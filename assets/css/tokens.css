@@ -43,6 +43,7 @@
   --spacing-2: 8px;
   --spacing-2-5: 10px;
   --spacing-3: 12px;
+  --spacing-3-5: 14px;
   --spacing-4: 16px;
   --spacing-4-5: 18px;
   --spacing-5: 20px;
@@ -75,6 +76,7 @@
 
   --color-text-brand-blue-default: #002d62;
   --color-text-brand-blue-hover: #1e40af;
+  --color-text-brand-red-default: #d81e2c;
   --color-text-brand-red-hover: #b91c1c;
   --color-text-neutral-primary: #0f172a;
   --color-text-neutral-secondary: #475569;
@@ -90,6 +92,7 @@
   --color-surface-neutral-secondary-strong: #cbd5e1;
   --color-surface-brand-red-normal: #d81e2c;
   --color-surface-brand-blue-soft: #eff6ff;
+  --color-surface-brand-blue-medium: #dbeafe;
   --color-surface-brand-blue-strong: #1e40af;
 
   --color-border-neutral-normal: #e2e8f0;
@@ -111,6 +114,10 @@
 
   --color-text-brand-blue-default: #60a5fa;
   --color-text-brand-blue-hover: #93c5fd;
+  /* Not in the originally captured dark dump — set equal to
+     surface-brand-red-normal's dark value, mirroring how this token equals
+     that one in light mode. */
+  --color-text-brand-red-default: #ef4444;
   --color-text-brand-red-hover: #f87171;
   --color-text-neutral-primary: #f8fafc;
   --color-text-neutral-secondary: #cbd5e1;
@@ -121,6 +128,10 @@
   --color-surface-neutral-secondary-medium: #334155;
   --color-surface-brand-red-normal: #ef4444;
   --color-surface-brand-blue-soft: #001731;
+  /* Not in the originally captured Figma dark-mode dump — estimated between
+     brand-blue-soft and brand-blue-strong's dark values so the light-blue
+     text that sits on it (brand-blue-hover) stays readable. */
+  --color-surface-brand-blue-medium: #0f2a52;
 
   --color-border-inverse-soft: #1e293b;
   --color-border-brand-red-secondary: #f87171;

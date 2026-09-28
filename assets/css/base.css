@@ -152,6 +152,11 @@ button {
   line-height: var(--leading-11);
   font-weight: var(--font-weight-semibold);
 }
+.text-heading-2xl {
+  font-size: var(--font-size-2xl);
+  line-height: var(--leading-8);
+  font-weight: var(--font-weight-semibold);
+}
 .text-heading-3xl {
   font-size: var(--font-size-3xl);
   line-height: var(--leading-9);

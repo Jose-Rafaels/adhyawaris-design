@@ -1,5 +1,6 @@
 // Site-wide interactions: light/dark theme toggle, mobile menu, hero search,
-// and (on the Listing Product page) the filter sheet and active-filter chips.
+// the Listing Product filter sheet and active-filter chips, the Product
+// Detail tabs and gallery, and the Consultation page's WhatsApp form.
 // The initial theme is applied by the inline script in <head> to avoid a flash.
 
 (function () {
@@ -169,4 +170,37 @@
       });
     });
   });
+
+  // ---- Consultation form (Consultation page) ----
+  // No backend behind this static page: composes the filled-in fields into
+  // a formatted message and opens WhatsApp (wa.me) with it pre-filled,
+  // matching the page's own "terhubung otomatis ke WhatsApp" copy.
+  var consultationForm = document.querySelector('[data-consultation-form]');
+  if (consultationForm) {
+    var WHATSAPP_NUMBER = '622138741115'; // company number, intl format, no leading +
+    var CONSULTATION_FIELDS = [
+      ['Nama Lengkap', 'name'],
+      ['Email Kantor', 'email'],
+      ['Jalur / Skema Pengadaan', 'procurement'],
+      ['Model Instrumen Acuan', 'instrument'],
+      ['Nama Instansi', 'institution'],
+      ['Kota / Lokasi', 'location'],
+      ['Detail Kebutuhan', 'detail'],
+    ];
+
+    consultationForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!consultationForm.reportValidity()) return;
+
+      var lines = ['Halo, saya ingin berkonsultasi mengenai kebutuhan instrumen laboratorium:', ''];
+      CONSULTATION_FIELDS.forEach(function (field) {
+        var element = consultationForm.elements.namedItem(field[1]);
+        var value = element && 'value' in element ? element.value.trim() : '';
+        if (value) lines.push(field[0] + ': ' + value);
+      });
+
+      var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(url, '_blank', 'noopener');
+    });
+  }
 })();
