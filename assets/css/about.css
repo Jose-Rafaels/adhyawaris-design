@@ -1,0 +1,528 @@
+/*
+ * About Us (Tentang Kami) page — hero with photo, Profile & Core Value,
+ * Visi & Misi, Standar, and Team sections.
+ */
+
+.section-title {
+  color: var(--color-text-neutral-primary);
+}
+
+/* ---- Hero (full-bleed photo, no breadcrumb/search — distinct from .page-hero) ---- */
+
+.about-hero {
+  position: relative;
+  padding: var(--spacing-20);
+  overflow: hidden;
+  background: var(--color-surface-neutral-primary-normal);
+}
+
+.about-hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Fades the photo out toward the left, where the heading sits, for contrast. */
+  background: linear-gradient(to left, rgba(248, 250, 252, 0), var(--color-surface-neutral-primary-normal));
+}
+
+.about-hero__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  max-width: 738px;
+}
+
+.about-hero__title {
+  color: var(--color-text-brand-blue-default);
+}
+
+.about-hero__subtitle {
+  color: var(--color-text-neutral-secondary);
+}
+
+@media (max-width: 767px) {
+  .about-hero {
+    padding: var(--spacing-20) var(--spacing-3);
+  }
+
+  .about-hero__title {
+    font-size: var(--font-size-2xl);
+    line-height: var(--leading-8);
+  }
+}
+
+/* ---- Profile & Core Value ---- */
+
+.profile {
+  background: var(--color-surface-neutral-primary-normal);
+}
+
+.profile__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-block: var(--spacing-14);
+}
+
+.profile__row {
+  display: flex;
+  gap: var(--spacing-5);
+  align-items: flex-start;
+}
+
+.profile__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.profile__title {
+  max-width: 528px;
+  color: var(--color-text-neutral-primary);
+}
+
+.profile__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4-5);
+}
+
+.profile__lead {
+  color: var(--color-text-neutral-primary);
+}
+
+.profile__lead strong {
+  font-weight: var(--font-weight-medium);
+}
+
+.profile__quote {
+  display: flex;
+  gap: var(--spacing-2-5);
+  padding: var(--spacing-3) var(--spacing-4-5);
+  border: 1px solid var(--color-border-brand-blue-secondary);
+  border-radius: var(--radius-base);
+  background: var(--color-surface-brand-blue-soft);
+}
+
+.profile__quote .icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-brand-blue-hover);
+}
+
+.profile__quote p {
+  color: var(--color-text-brand-blue-hover);
+}
+
+.profile__quote strong {
+  font-weight: var(--font-weight-medium);
+}
+
+.profile__media {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 630px;
+  height: 460px;
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+
+.profile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.value-cards {
+  display: flex;
+  gap: var(--spacing-5);
+  width: 100%;
+}
+
+.value-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 320px;
+  padding: var(--spacing-6);
+  border: 1px solid var(--color-border-neutral-medium);
+  border-radius: var(--radius-lg);
+  /* secondary-medium (not secondary-normal) has a dark-mode value, so the
+     neutral-primary text on it stays legible in both themes — see the
+     .brand-surface / .filter-panel notes elsewhere for why this matters. */
+  background: var(--color-surface-neutral-secondary-medium);
+}
+
+.value-card .icon {
+  width: 56px;
+  height: 56px;
+  color: var(--color-text-brand-blue-hover);
+}
+
+.value-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.value-card__title {
+  color: var(--color-text-neutral-primary);
+}
+
+.value-card__description {
+  color: var(--color-text-neutral-secondary);
+}
+
+@media (max-width: 1023px) {
+  .profile__row {
+    flex-direction: column;
+  }
+
+  .profile__media {
+    max-width: none;
+    height: 320px;
+  }
+
+  .value-cards {
+    flex-direction: column;
+  }
+
+  .value-card {
+    /* flex: 1 1 0 sizes along the main axis, which is now vertical; reset it
+       so each card takes its own content height instead of fighting the
+       others for a share of the (otherwise auto/unconstrained) column
+       height, which was collapsing them on top of each other. */
+    flex: none;
+    min-height: 0;
+  }
+}
+
+/* ---- Visi & Misi ---- */
+
+.visi-misi {
+  background: var(--color-surface-brand-blue-soft);
+}
+
+.visi-misi__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-block: var(--spacing-14);
+}
+
+.visi-misi__row {
+  display: flex;
+  gap: var(--spacing-5);
+  align-items: stretch;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  padding: var(--spacing-1-5) var(--spacing-3);
+  border: 1px solid;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+
+.pill-badge .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.visi {
+  /* z-index (with position) opens a stacking context, so the negative
+     z-index media/overlay below stay confined behind *this* element's own
+     background instead of escaping behind the whole section. */
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--spacing-10) var(--spacing-9);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+  color: var(--color-text-inverse-normal);
+}
+
+.visi__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.visi__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+ * The tint sits on .visi itself (z-index -1, above the photo's -2) rather
+ * than as .visi__media::after: a ::after on an absolutely-positioned,
+ * z-indexed .visi__media would open its own stacking context and end up
+ * trapped behind that element's own img instead of on top of it.
+ */
+.visi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  /* Exact overlay tint from Figma: rgba(30, 64, 175, 0.8). */
+  background: rgba(30, 64, 175, 0.8);
+}
+
+.visi .pill-badge {
+  border-color: var(--color-border-neutral-medium);
+  color: var(--color-text-inverse-normal);
+}
+
+.visi__statement {
+  color: var(--color-text-inverse-normal);
+}
+
+.misi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  width: 521px;
+  flex-shrink: 0;
+  padding: var(--spacing-10) var(--spacing-9);
+  border: 1px solid var(--color-border-neutral-medium);
+  border-radius: var(--radius-base);
+  background: var(--color-surface-neutral-primary-normal);
+}
+
+.misi .pill-badge {
+  border-color: var(--color-text-brand-blue-hover);
+  background: var(--color-surface-neutral-secondary-normal);
+  color: var(--color-text-brand-blue-hover);
+}
+
+.misi__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.misi__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  padding-bottom: var(--spacing-3);
+}
+
+.misi__item:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-neutral-normal);
+}
+
+.misi__item-title {
+  color: var(--color-text-neutral-primary);
+}
+
+.misi__item-description {
+  color: var(--color-text-neutral-secondary);
+}
+
+@media (max-width: 1023px) {
+  .visi-misi__row {
+    flex-direction: column;
+  }
+
+  .misi {
+    width: 100%;
+  }
+}
+
+/* ---- Standar ---- */
+
+.standar {
+  background: var(--color-surface-neutral-primary-normal);
+}
+
+.standar__inner {
+  display: flex;
+  gap: var(--spacing-14);
+  align-items: flex-start;
+  padding-block: var(--spacing-14);
+}
+
+.standar__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.standar__title {
+  max-width: 522px;
+  color: var(--color-text-neutral-primary);
+}
+
+.standar__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.standar__lead {
+  color: var(--color-text-neutral-primary);
+}
+
+.standar__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.standar__item {
+  display: flex;
+  gap: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--color-surface-neutral-secondary-normal);
+}
+
+.standar__item .icon {
+  flex-shrink: 0;
+  color: var(--color-text-brand-blue-hover);
+}
+
+.standar__item p {
+  color: var(--color-text-neutral-primary);
+}
+
+.standar__media {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 630px;
+  height: 460px;
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+
+.standar__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .standar__inner {
+    flex-direction: column;
+  }
+
+  .standar__media {
+    max-width: none;
+    height: 320px;
+  }
+}
+
+/* ---- Team ---- */
+
+.team {
+  background: var(--color-surface-brand-blue-soft);
+}
+
+.team__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-block: var(--spacing-14);
+}
+
+.team__row {
+  display: flex;
+  gap: var(--spacing-4);
+  /*
+   * The Figma frame clips the 5th card at a fixed 1280px width; a horizontal
+   * scroll makes that card reachable instead of just cropping it off.
+   */
+  overflow-x: auto;
+  padding-bottom: var(--spacing-2);
+  scroll-snap-type: x proximity;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  flex-shrink: 0;
+  width: 286px;
+  scroll-snap-align: start;
+}
+
+.team-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-neutral-secondary-medium);
+  color: var(--color-text-neutral-tertiary);
+}
+
+.team-card__media .icon {
+  width: 72px;
+  height: 72px;
+}
+
+.team-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.team-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.team-card__name {
+  color: var(--color-text-neutral-primary);
+}
+
+.team-card__role {
+  color: var(--color-text-neutral-secondary);
+}
+
+.team-card__focus {
+  color: var(--color-text-neutral-primary);
+}
+
+@media (max-width: 767px) {
+  .team__row {
+    gap: var(--spacing-3);
+  }
+
+  .team-card {
+    width: 240px;
+  }
+
+  .team-card__media {
+    height: 240px;
+  }
+}

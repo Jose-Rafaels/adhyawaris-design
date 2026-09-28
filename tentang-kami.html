@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tentang PT Adhya Waris Saintifik — distributor resmi instrumen laboratorium analitikal bersertifikasi TKDN, visi, misi, standar, dan tim kami."
+    />
+    <title>Tentang Kami — Adhya Waris Saintifik</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <script>
+      // Apply the saved/system theme before first paint to avoid a flash.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem('aw-theme');
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Icon sprite: Phosphor icons (regular), referenced with <use href="#i-name" />. -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z" /></symbol>
+      <symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" /></symbol>
+      <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" /></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z" /></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z" /></symbol>
+      <symbol id="i-stack" viewBox="0 0 256 256"><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.06,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z" /></symbol>
+      <symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z" /></symbol>
+      <symbol id="i-quotes" viewBox="0 0 256 256"><path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z" /></symbol>
+      <symbol id="i-sliders-horizontal" viewBox="0 0 256 256"><path d="M40,88H73a32,32,0,0,0,62,0h81a8,8,0,0,0,0-16H135a32,32,0,0,0-62,0H40a8,8,0,0,0,0,16Zm64-24A16,16,0,1,1,88,80,16,16,0,0,1,104,64ZM216,168H199a32,32,0,0,0-62,0H40a8,8,0,0,0,0,16h97a32,32,0,0,0,62,0h17a8,8,0,0,0,0-16Zm-48,24a16,16,0,1,1,16-16A16,16,0,0,1,168,192Z" /></symbol>
+      <symbol id="i-eye" viewBox="0 0 256 256"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z" /></symbol>
+      <symbol id="i-compass" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z" /></symbol>
+      <symbol id="i-check-circle" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z" /></symbol>
+      <symbol id="i-user-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z" /></symbol>
+      <symbol id="logo-wordmark" viewBox="0 0 115 32">
+        <text x="0" y="21" fill="currentColor" font-weight="800" font-size="24" letter-spacing="0.5" textLength="115" lengthAdjust="spacingAndGlyphs">ADHYA</text>
+        <text x="1" y="30.5" fill="currentColor" font-weight="600" font-size="6" textLength="112" lengthAdjust="spacing">WARIS SAINTIFIK</text>
+      </symbol>
+    </svg>
+
+    <!-- ============ Navbar ============ -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a class="navbar__brand" href="index.html" aria-label="Adhya Waris Saintifik — Beranda">
+          <svg class="logo navbar__logo" role="img" aria-label="Adhya Waris Saintifik"><use href="#logo-wordmark" /></svg>
+        </a>
+
+        <nav class="navbar__nav" aria-label="Navigasi utama">
+          <a class="navbar__link text-body-base-medium" href="index.html">Home</a>
+          <a class="navbar__link text-body-base-medium" href="listing-produk.html">
+            Produk
+            <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+          </a>
+          <a class="navbar__link text-body-base-medium" href="index.html#artikel">Artikel &amp; Berita</a>
+          <a class="navbar__link text-body-base-medium" href="tentang-kami.html" aria-current="page">Tentang Kami</a>
+          <a class="navbar__link text-body-base-medium" href="index.html#kontak">Hubungi Kami</a>
+        </nav>
+
+        <div class="navbar__options">
+          <button class="navbar__icon-button" type="button" data-theme-toggle aria-label="Ganti tema">
+            <svg class="icon" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <span class="navbar__divider" aria-hidden="true"></span>
+          <button class="navbar__language text-body-base-medium" type="button" aria-label="Bahasa: Indonesia">
+            ID
+            <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+          </button>
+          <button
+            class="navbar__menu-button"
+            type="button"
+            data-menu-toggle
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Buka menu"
+          >
+            <svg class="icon icon--18 icon--open" aria-hidden="true"><use href="#i-list" /></svg>
+            <svg class="icon icon--18 icon--close" aria-hidden="true"><use href="#i-x" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="navbar__mobile-menu" hidden>
+        <nav class="container navbar__nav" aria-label="Navigasi utama (seluler)">
+          <a class="navbar__link text-body-base-medium" href="index.html">Home</a>
+          <a class="navbar__link text-body-base-medium" href="listing-produk.html">
+            Produk
+            <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+          </a>
+          <a class="navbar__link text-body-base-medium" href="index.html#artikel">Artikel &amp; Berita</a>
+          <a class="navbar__link text-body-base-medium" href="tentang-kami.html" aria-current="page">Tentang Kami</a>
+          <a class="navbar__link text-body-base-medium" href="index.html#kontak">Hubungi Kami</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ Hero ============ -->
+      <section class="about-hero" aria-labelledby="about-title">
+        <div class="about-hero__media" aria-hidden="true">
+          <img src="assets/images/hero-lab.webp" alt="" />
+        </div>
+        <div class="container about-hero__content">
+          <h1 id="about-title" class="about-hero__title text-heading-4xl">
+            Membangun Kemandirian dan Presisi Laboratorium Analitikal di Indonesia.
+          </h1>
+          <p class="about-hero__subtitle text-body-lg-regular">
+            Distributor resmi instrumen saintifik berstandar internasional dan pengembang solusi pengujian
+            bersertifikasi TKDN untuk institusi riset, industri, dan sektor publik.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ Profile & Core Value ============ -->
+      <section class="profile" aria-labelledby="profile-title">
+        <div class="container profile__inner">
+          <div class="profile__row">
+            <div class="profile__text">
+              <h2 id="profile-title" class="profile__title text-heading-3xl">
+                Distributor Resmi &amp; Pengembang <span class="text-gradient">Solusi Laboratorium</span>
+              </h2>
+              <div class="profile__body">
+                <p class="profile__lead text-body-base-regular">
+                  <strong>PT Adhya Waris Saintifik</strong> adalah penyedia solusi instrumen analitikal laboratorium
+                  presisi tinggi di Indonesia, mencakup lini HPLC, AAS, Spektrofotometer UV-Vis, dan timbangan analitik
+                  untuk kebutuhan riset maupun kendali mutu industri. Kami menghadirkan instrumen berstandar
+                  internasional yang telah tersertifikasi TKDN resmi 40%–48%+ guna mempermudah proses lelang via LPSE
+                  dan e-Katalog, lengkap dengan dukungan inspeksi pra-kirim, kalibrasi, serta teknisi domestik
+                  berlisensi.
+                </p>
+                <div class="profile__quote">
+                  <svg class="icon" aria-hidden="true"><use href="#i-quotes" /></svg>
+                  <p class="text-body-xs-regular">
+                    Nilai dasar kami memadukan <strong>&ldquo;Adhya&rdquo;</strong> sebagai komitmen keunggulan
+                    teknologi presisi, serta <strong>&ldquo;Waris&rdquo;</strong> sebagai dedikasi memelihara
+                    keandalan dan integritas kemitraan jangka panjang di laboratorium Anda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="profile__media">
+              <img src="assets/images/article-lab.webp" alt="" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="value-cards">
+            <div class="value-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-stack" /></svg>
+              <div class="value-card__text">
+                <h3 class="value-card__title text-body-xl-medium">Distribusi Instrumen Analitikal</h3>
+                <p class="value-card__description text-body-base-regular">Menyediakan sistem kromatografi cair (HPLC), spektroskopi (UV-Vis &amp; AAS), dan timbangan analitik presisi berstandar internasional untuk riset dan industri.</p>
+              </div>
+            </div>
+            <div class="value-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-shield-check" /></svg>
+              <div class="value-card__text">
+                <h3 class="value-card__title text-body-xl-medium">Pengadaan Publik &amp; TKDN</h3>
+                <p class="value-card__description text-body-base-regular">Memfasilitasi pengadaan instansi kementerian, balai riset, dan perguruan tinggi negeri via LPSE serta e-Katalog dengan instrumen bersertifikasi TKDN 40%–48%+.</p>
+              </div>
+            </div>
+            <div class="value-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-sliders-horizontal" /></svg>
+              <div class="value-card__text">
+                <h3 class="value-card__title text-body-xl-medium">Solusi Metode &amp; Daya Lab</h3>
+                <p class="value-card__description text-body-base-regular">Mendampingi validasi metode uji sampel kimia/farmasi, jaminan ketersediaan suku cadang resmi, serta proteksi instrumen dari lonjakan daya via Online UPS laboratorium.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Visi & Misi ============ -->
+      <section class="visi-misi" aria-labelledby="visi-misi-title">
+        <div class="container visi-misi__inner">
+          <h2 id="visi-misi-title" class="section-title text-heading-3xl">
+            Fondasi Visi &amp; <span class="text-gradient">Misi Kami</span>
+          </h2>
+          <div class="visi-misi__row">
+            <div class="visi">
+              <div class="visi__media" aria-hidden="true">
+                <img src="assets/images/hero-lab.webp" alt="" />
+              </div>
+              <span class="pill-badge text-body-sm-regular">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye" /></svg>
+                Visi Perusahaan
+              </span>
+              <p class="visi__statement text-heading-4xl">
+                &ldquo;Menjadi salah satu Perusahaan Distributor Alat Laboratorium Analitikal yang Profesional dengan
+                menjaga kualitas dan kepuasan pelanggan.&rdquo;
+              </p>
+            </div>
+            <div class="misi">
+              <span class="pill-badge text-body-sm-regular">
+                <svg class="icon" aria-hidden="true"><use href="#i-compass" /></svg>
+                Misi Perusahaan
+              </span>
+              <div class="misi__list">
+              <div class="misi__item">
+                <h3 class="misi__item-title text-body-xl-semibold">Mengembangkan Produk TKDN</h3>
+                <p class="misi__item-description text-body-base-regular">Mendukung kemandirian fasilitas uji nasional melalui peningkatan kandungan lokal instrumen.</p>
+              </div>
+              <div class="misi__item">
+                <h3 class="misi__item-title text-body-xl-semibold">Menyediakan Alat Lab Kualitas Terbaik</h3>
+                <p class="misi__item-description text-body-base-regular">Memasok lini instrumen berakurasi tinggi yang memenuhi standar pengujian analitis internasional.</p>
+              </div>
+              <div class="misi__item">
+                <h3 class="misi__item-title text-body-xl-semibold">Menjaga Mutu Layanan Purna Jual</h3>
+                <p class="misi__item-description text-body-base-regular">Mengedepankan kepuasan dengan kesiapan teknisi, suku cadang, dan pendampingan aplikasi.</p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Standar ============ -->
+      <section class="standar" aria-labelledby="standar-title">
+        <div class="container standar__inner">
+          <div class="standar__text">
+            <h2 id="standar-title" class="standar__title text-heading-3xl">
+              Standar Pengadaan Nasional Melalui <span class="text-gradient">Sertifikasi TKDN Resmi</span>
+            </h2>
+            <div class="standar__body">
+              <p class="standar__lead text-body-base-regular">
+                Mendukung kebijakan belanja produk dalam negeri (P3DN), PT Adhya Waris Saintifik menghadirkan lini
+                instrumen analitikal berbobot nilai TKDN resmi di atas 40% guna mempermudah proses lelang via LPSE dan
+                e-Katalog tanpa mengorbankan akurasi pengujian.
+              </p>
+              <div class="standar__list">
+              <div class="standar__item text-body-sm-regular">
+                <svg class="icon" aria-hidden="true"><use href="#i-check-circle" /></svg>
+                <p>Memenuhi regulasi belanja produk dalam negeri agar instansi aman dari risiko sanggahan tender dan temuan audit anggaran.</p>
+              </div>
+              <div class="standar__item text-body-sm-regular">
+                <svg class="icon" aria-hidden="true"><use href="#i-check-circle" /></svg>
+                <p>Mempercepat proses administrasi pengadaan karena spesifikasi teknis unit sudah terdaftar resmi di sistem e-Katalog dan LPSE.</p>
+              </div>
+              <div class="standar__item text-body-sm-regular">
+                <svg class="icon" aria-hidden="true"><use href="#i-check-circle" /></svg>
+                <p>Memastikan ketersediaan suku cadang asli serta teknisi bersertifikat di dalam negeri tanpa kendala birokrasi impor.</p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="standar__media">
+            <img src="assets/images/hero-lab.webp" alt="" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Team ============ -->
+      <section class="team" aria-labelledby="team-title">
+        <div class="container team__inner">
+          <h2 id="team-title" class="section-title text-heading-3xl">
+            Tim Manajemen &amp; <span class="text-gradient">Spesialis Lab</span>
+          </h2>
+          <div class="team__row">
+            <article class="team-card">
+              <div class="team-card__media">
+                <svg class="icon" aria-hidden="true"><use href="#i-user-circle" /></svg>
+              </div>
+              <div class="team-card__info">
+                <div class="team-card__heading">
+                  <p class="team-card__name text-body-xl-semibold">Ir. Hendra Gunawan, M.M.</p>
+                  <p class="team-card__role text-body-sm-regular">Direktur Operasional</p>
+                </div>
+                <p class="team-card__focus text-body-sm-regular">Rantai Pasok Lab &amp; Kemitraan Pengadaan Publik</p>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-card__media">
+                <svg class="icon" aria-hidden="true"><use href="#i-user-circle" /></svg>
+              </div>
+              <div class="team-card__info">
+                <div class="team-card__heading">
+                  <p class="team-card__name text-body-xl-semibold">Ir. Hendra Gunawan, M.M.</p>
+                  <p class="team-card__role text-body-sm-regular">Direktur Operasional</p>
+                </div>
+                <p class="team-card__focus text-body-sm-regular">Rantai Pasok Lab &amp; Kemitraan Pengadaan Publik</p>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-card__media">
+                <svg class="icon" aria-hidden="true"><use href="#i-user-circle" /></svg>
+              </div>
+              <div class="team-card__info">
+                <div class="team-card__heading">
+                  <p class="team-card__name text-body-xl-semibold">Ir. Hendra Gunawan, M.M.</p>
+                  <p class="team-card__role text-body-sm-regular">Direktur Operasional</p>
+                </div>
+                <p class="team-card__focus text-body-sm-regular">Rantai Pasok Lab &amp; Kemitraan Pengadaan Publik</p>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-card__media">
+                <svg class="icon" aria-hidden="true"><use href="#i-user-circle" /></svg>
+              </div>
+              <div class="team-card__info">
+                <div class="team-card__heading">
+                  <p class="team-card__name text-body-xl-semibold">Ir. Hendra Gunawan, M.M.</p>
+                  <p class="team-card__role text-body-sm-regular">Direktur Operasional</p>
+                </div>
+                <p class="team-card__focus text-body-sm-regular">Rantai Pasok Lab &amp; Kemitraan Pengadaan Publik</p>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-card__media">
+                <svg class="icon" aria-hidden="true"><use href="#i-user-circle" /></svg>
+              </div>
+              <div class="team-card__info">
+                <div class="team-card__heading">
+                  <p class="team-card__name text-body-xl-semibold">Ir. Hendra Gunawan, M.M.</p>
+                  <p class="team-card__role text-body-sm-regular">Direktur Operasional</p>
+                </div>
+                <p class="team-card__focus text-body-sm-regular">Rantai Pasok Lab &amp; Kemitraan Pengadaan Publik</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="container cta__inner">
+          <div class="cta__card brand-surface" style="background-image: url('assets/images/cta-bg.webp')">
+            <div class="cta__content">
+              <div class="cta__copy">
+                <h2 id="cta-title" class="cta__title text-heading-5xl">
+                  Butuh Penawaran Harga atau<br />
+                  Konsultasi Teknis?
+                </h2>
+                <p class="cta__description text-body-base-regular">
+                  Diskusikan kebutuhan fasilitas pengujian Anda secara mendalam—mulai dari pemilihan unit instrumen
+                  analitis, perencanaan sistem integrasi, hingga skema garansi purna jual dan pendampingan aplikasi
+                  langsung oleh teknisi bersertifikat
+                </p>
+              </div>
+              <a class="button" href="index.html#kontak">Konsultasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer id="kontak" class="footer">
+      <div class="container footer__inner">
+        <div class="footer__content">
+          <div class="footer__about">
+            <svg class="logo logo--inverse footer__logo" role="img" aria-label="Adhya Waris Saintifik"><use href="#logo-wordmark" /></svg>
+            <p class="text-body-base-regular">
+              Distributor resmi instrumen laboratorium analitikal terpercaya dan pengembang produk bersertifikasi TKDN di
+              Indonesia.
+            </p>
+            <address class="footer__address text-body-base-regular">
+              <svg class="icon" aria-hidden="true"><use href="#i-map-pin" /></svg>
+              Ruko Arya Kemuning Blok A No. 4, Cilodong, Kota Depok, Jawa Barat 16415
+            </address>
+          </div>
+
+          <div class="footer__columns">
+            <nav class="footer__column" aria-labelledby="footer-company">
+              <h2 id="footer-company" class="footer__column-title text-body-sm-semibold">COMPANY</h2>
+              <ul class="footer__links text-body-base-regular">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="listing-produk.html">Produk</a></li>
+                <li><a href="index.html#artikel">Artikel &amp; Berita</a></li>
+                <li><a href="tentang-kami.html" aria-current="page">Tentang Kami</a></li>
+                <li><a href="index.html#kontak">Hubungi Kami</a></li>
+              </ul>
+            </nav>
+
+            <div class="footer__column">
+              <h2 class="footer__column-title text-body-sm-semibold">CONTACT</h2>
+              <ul class="footer__links text-body-base-regular">
+                <li><a href="tel:+622138741115">+62 21 38741115</a></li>
+                <li><a href="mailto:info@adhyawaris.co.id">info@adhyawaris.co.id</a></li>
+                <li><a href="https://www.adhyawaris.co.id">www.adhyawaris.co.id</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h2 class="footer__column-title text-body-sm-semibold">SOCIAL MEDIA</h2>
+              <ul class="footer__links text-body-base-regular">
+                <li>
+                  <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">
+                    Tiktok
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+                    Instagram
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+                    Facebook
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                    LinkedIn
+                    <svg class="icon icon--18" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer__copyright text-body-base-regular">© 2026 PT Adhya Waris Saintifik. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -162,10 +162,20 @@ button {
   line-height: var(--leading-7);
   font-weight: var(--font-weight-normal);
 }
+.text-body-xl-medium {
+  font-size: var(--font-size-xl);
+  line-height: var(--leading-7);
+  font-weight: var(--font-weight-medium);
+}
 .text-body-xl-semibold {
   font-size: var(--font-size-xl);
   line-height: var(--leading-7);
   font-weight: var(--font-weight-semibold);
+}
+.text-body-lg-regular {
+  font-size: var(--font-size-lg);
+  line-height: var(--leading-6);
+  font-weight: var(--font-weight-normal);
 }
 .text-body-lg-semibold {
   font-size: var(--font-size-lg);
