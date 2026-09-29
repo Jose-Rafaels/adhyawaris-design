@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Tambah Produk — Panel Admin Adhya Waris Saintifik</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/admin.css" />
+    <script>
+      // Apply the saved/system theme before first paint to avoid a flash.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem('aw-theme');
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script src="assets/js/admin.js" defer></script>
+  </head>
+  <body>
+    <!-- Icon sprite: Phosphor icons (regular), referenced with <use href="#i-name" />. -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z" /></symbol>
+      <symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" /></symbol>
+      <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" /></symbol>
+      <symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" /></symbol>
+      <symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z" /></symbol>
+      <symbol id="i-squares-four" viewBox="0 0 256 256"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z" /></symbol>
+      <symbol id="i-package" viewBox="0 0 256 256"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z" /></symbol>
+      <symbol id="i-newspaper" viewBox="0 0 256 256"><path d="M88,112a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H96A8,8,0,0,1,88,112Zm8,40h80a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16ZM232,64V184a24,24,0,0,1-24,24H32A24,24,0,0,1,8,184.11V88a8,8,0,0,1,16,0v96a8,8,0,0,0,16,0V64A16,16,0,0,1,56,48H216A16,16,0,0,1,232,64Zm-16,0H56V184a23.84,23.84,0,0,1-1.37,8H208a8,8,0,0,0,8-8Z" /></symbol>
+      <symbol id="i-house" viewBox="0 0 256 256"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z" /></symbol>
+      <symbol id="i-sign-out" viewBox="0 0 256 256"><path d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z" /></symbol>
+      <symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z" /></symbol>
+      <symbol id="i-user-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z" /></symbol>
+      <symbol id="i-upload-simple" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0ZM93.66,77.66,120,51.31V144a8,8,0,0,0,16,0V51.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,77.66Z" /></symbol>
+      <symbol id="i-image" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z" /></symbol>
+      <symbol id="i-floppy-disk" viewBox="0 0 256 256"><path d="M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM168,208H88V152h80Zm40,0H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31ZM160,72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h56A8,8,0,0,1,160,72Z" /></symbol>
+      <symbol id="logo-wordmark" viewBox="0 0 115 32">
+        <text x="0" y="21" fill="currentColor" font-weight="800" font-size="24" letter-spacing="0.5" textLength="115" lengthAdjust="spacingAndGlyphs">ADHYA</text>
+        <text x="1" y="30.5" fill="currentColor" font-weight="600" font-size="6" textLength="112" lengthAdjust="spacing">WARIS SAINTIFIK</text>
+      </symbol>
+    </svg>
+
+    <div class="admin-shell">
+      <div class="admin-sidebar-backdrop" data-sidebar-backdrop></div>
+
+      <!-- ============ Sidebar ============ -->
+      <aside id="admin-sidebar" class="admin-sidebar" aria-label="Navigasi admin">
+        <div class="admin-sidebar__brand">
+          <svg class="logo logo--inverse" style="width: 115px; height: 32px" role="img" aria-label="Adhya Waris Saintifik"><use href="#logo-wordmark" /></svg>
+          <span class="admin-sidebar__badge text-label-xs">ADMIN</span>
+        </div>
+
+        <nav class="admin-sidebar__nav" aria-label="Menu utama">
+          <p class="admin-sidebar__section-title text-label-xs">Menu Utama</p>
+          <span class="admin-sidebar__link admin-sidebar__link--disabled text-body-sm-medium" aria-disabled="true">
+            <svg class="icon" aria-hidden="true"><use href="#i-squares-four" /></svg>
+            Dashboard
+            <span class="admin-sidebar__link-soon text-label-xs">Segera</span>
+          </span>
+          <a class="admin-sidebar__link text-body-sm-medium" href="admin-produk.html" aria-current="page">
+            <svg class="icon" aria-hidden="true"><use href="#i-package" /></svg>
+            Produk
+          </a>
+          <span class="admin-sidebar__link admin-sidebar__link--disabled text-body-sm-medium" aria-disabled="true">
+            <svg class="icon" aria-hidden="true"><use href="#i-newspaper" /></svg>
+            Artikel &amp; Berita
+            <span class="admin-sidebar__link-soon text-label-xs">Segera</span>
+          </span>
+        </nav>
+
+        <div class="admin-sidebar__footer">
+          <a class="admin-sidebar__link text-body-sm-medium" href="index.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-house" /></svg>
+            Lihat Situs
+          </a>
+          <a class="admin-sidebar__link text-body-sm-medium" href="admin-login.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-sign-out" /></svg>
+            Keluar
+          </a>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <!-- ============ Topbar ============ -->
+        <header class="admin-topbar">
+          <div class="admin-topbar__start">
+            <button class="admin-topbar__menu-button" type="button" data-sidebar-toggle aria-expanded="false" aria-controls="admin-sidebar" aria-label="Buka menu">
+              <svg class="icon" aria-hidden="true"><use href="#i-list" /></svg>
+            </button>
+            <h1 class="admin-topbar__title text-body-lg-semibold" data-form-title>Tambah Produk</h1>
+          </div>
+          <div class="admin-topbar__actions">
+            <button class="admin-topbar__icon-button" type="button" data-theme-toggle aria-label="Ganti tema">
+              <svg class="icon" aria-hidden="true"><use href="#i-sun" /></svg>
+            </button>
+            <button class="admin-topbar__icon-button" type="button" aria-label="Notifikasi (3 baru)">
+              <svg class="icon" aria-hidden="true"><use href="#i-bell" /></svg>
+              <span class="admin-topbar__dot" aria-hidden="true"></span>
+            </button>
+            <span class="admin-topbar__divider" aria-hidden="true"></span>
+            <div class="admin-profile">
+              <span class="admin-profile__avatar"><svg class="icon" aria-hidden="true"><use href="#i-user-circle" /></svg></span>
+              <span class="admin-profile__info">
+                <span class="admin-profile__name text-body-sm-medium">Dian Kusuma</span>
+                <span class="admin-profile__role text-label-xs">Admin Katalog</span>
+              </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- ============ Content ============ -->
+        <main class="admin-content">
+          <nav class="admin-breadcrumb text-body-sm-regular" aria-label="Breadcrumb">
+            <a href="admin-produk.html">Produk</a>
+            <svg class="icon icon--16" aria-hidden="true"><use href="#i-caret-right" /></svg>
+            <span class="admin-breadcrumb__current" data-form-breadcrumb aria-current="page">Tambah Produk</span>
+          </nav>
+
+          <div class="admin-page-header">
+            <div class="admin-page-header__heading">
+              <h2 class="admin-page-header__title text-heading-2xl" data-form-title>Tambah Produk</h2>
+              <p class="admin-page-header__subtitle text-body-sm-regular" data-form-subtitle>
+                Lengkapi detail produk baru untuk ditambahkan ke katalog.
+              </p>
+            </div>
+          </div>
+
+          <form data-product-form novalidate>
+            <div class="admin-form-grid">
+              <!-- ---- Main column ---- -->
+              <div class="admin-card">
+                <div class="admin-card__header">
+                  <h3 class="admin-card__title text-body-lg-semibold">Informasi Produk</h3>
+                  <p class="admin-card__subtitle text-body-sm-regular">Nama, kategori, dan deskripsi yang tampil di katalog publik.</p>
+                </div>
+
+                <div class="admin-field">
+                  <label class="admin-field__label text-body-sm-medium" for="field-name">
+                    Nama Produk <span class="admin-field__required">*</span>
+                  </label>
+                  <input class="admin-field__control" type="text" id="field-name" name="name" placeholder="Contoh: SUV-1200 Series UV-Vis Double Beam" required />
+                </div>
+
+                <div class="admin-field-row">
+                  <div class="admin-field">
+                    <label class="admin-field__label text-body-sm-medium" for="field-sku">SKU</label>
+                    <input class="admin-field__control" type="text" id="field-sku" name="sku" placeholder="Contoh: AW-SUV-1200" />
+                  </div>
+                  <div class="admin-field admin-field--select">
+                    <label class="admin-field__label text-body-sm-medium" for="field-category">
+                      Kategori Utama <span class="admin-field__required">*</span>
+                    </label>
+                    <select class="admin-field__control" id="field-category" name="category" required>
+                      <option value="" disabled selected>Pilih kategori</option>
+                      <option value="spektrofotometri">Spektrofotometri</option>
+                      <option value="kromatografi">Kromatografi</option>
+                      <option value="mikroskopi">Mikroskopi</option>
+                      <option value="analisis-elemental">Analisis Elemental</option>
+                      <option value="timbangan-analitik">Timbangan Analitik</option>
+                      <option value="instrumen-pendukung">Instrumen Pendukung Lab</option>
+                    </select>
+                    <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+                  </div>
+                </div>
+
+                <div class="admin-field-row">
+                  <div class="admin-field admin-field--select">
+                    <label class="admin-field__label text-body-sm-medium" for="field-lini">Lini Instrumen</label>
+                    <select class="admin-field__control" id="field-lini" name="lini">
+                      <option value="">Tidak ditentukan</option>
+                      <option value="farmasi">Farmasi &amp; Obat-obatan</option>
+                      <option value="diagnostik">Diagnostik Klinis</option>
+                      <option value="pangan">Pangan &amp; Minuman</option>
+                      <option value="biokimia">Biokimia &amp; Sains Hayati</option>
+                      <option value="lingkungan">Sains Lingkungan &amp; Air</option>
+                    </select>
+                    <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+                  </div>
+                  <div class="admin-field">
+                    <label class="admin-field__label text-body-sm-medium" for="field-tkdn">
+                      TKDN (%) <span class="admin-field__required">*</span>
+                    </label>
+                    <input class="admin-field__control" type="number" id="field-tkdn" name="tkdn" min="0" max="100" step="0.01" placeholder="Contoh: 40.36" required />
+                  </div>
+                </div>
+
+                <div class="admin-field">
+                  <label class="admin-field__label text-body-sm-medium" for="field-description">
+                    Deskripsi Singkat <span class="admin-field__required">*</span>
+                  </label>
+                  <textarea class="admin-field__control" id="field-description" name="description" placeholder="Ringkasan 1-2 kalimat yang tampil pada kartu produk di katalog." required></textarea>
+                  <p class="admin-field__hint text-label-xs">Tampil pada kartu produk di halaman Katalog Produk. Maksimal sekitar 160 karakter.</p>
+                </div>
+
+                <div class="admin-field">
+                  <label class="admin-field__label text-body-sm-medium" for="field-specification">Spesifikasi Utama</label>
+                  <textarea class="admin-field__control" id="field-specification" name="specification" placeholder="Satu poin spesifikasi per baris, contoh:&#10;Layar sentuh 10,1 inci&#10;Memori internal 1024 MB&#10;Rentang panjang gelombang 190-1100 nm"></textarea>
+                  <p class="admin-field__hint text-label-xs">Ditampilkan pada tab Spesifikasi di halaman Detail Produk.</p>
+                </div>
+              </div>
+
+              <!-- ---- Sidebar column ---- -->
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-6)">
+                <div class="admin-card">
+                  <div class="admin-card__header">
+                    <h3 class="admin-card__title text-body-lg-semibold">Gambar Produk</h3>
+                    <p class="admin-card__subtitle text-body-sm-regular">Foto utama yang tampil di kartu dan galeri produk.</p>
+                  </div>
+
+                  <label class="image-upload">
+                    <input type="file" accept="image/*" data-upload-input />
+                    <svg class="icon icon--32" aria-hidden="true"><use href="#i-upload-simple" /></svg>
+                    <span class="image-upload__title text-body-sm-medium">Klik untuk unggah gambar</span>
+                    <span class="text-label-xs">PNG, JPG, atau WEBP &bull; maks. 5MB</span>
+                  </label>
+
+                  <div class="image-upload__preview-grid" data-upload-preview-grid hidden>
+                    <div class="image-upload__preview" data-existing-preview hidden>
+                      <img src="assets/images/product-uv-vis.png" alt="" />
+                      <button type="button" class="image-upload__remove" aria-label="Hapus gambar">
+                        <svg class="icon icon--16" aria-hidden="true"><use href="#i-x" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="admin-card">
+                  <div class="admin-card__header">
+                    <h3 class="admin-card__title text-body-lg-semibold">Status &amp; Visibilitas</h3>
+                  </div>
+
+                  <div class="admin-field admin-field--select">
+                    <label class="admin-field__label text-body-sm-medium" for="field-status">Status Produk</label>
+                    <select class="admin-field__control" id="field-status" name="status">
+                      <option value="draft">Draf — belum tayang</option>
+                      <option value="published">Dipublikasikan — tayang di katalog</option>
+                      <option value="inactive">Nonaktif — disembunyikan</option>
+                    </select>
+                    <svg class="icon" aria-hidden="true"><use href="#i-caret-down" /></svg>
+                  </div>
+
+                  <label class="admin-toggle">
+                    <input type="checkbox" name="badge-ekatalog" checked />
+                    <span class="admin-toggle__track" aria-hidden="true"></span>
+                    <span class="admin-toggle__label">
+                      <span class="admin-toggle__label-title text-body-sm-medium">Tampilkan Badge e-Katalog</span>
+                      <span class="admin-toggle__label-hint text-label-xs">Muncul pada kartu produk jika aktif</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="admin-card">
+                  <div class="admin-card__header">
+                    <h3 class="admin-card__title text-body-lg-semibold">Riwayat</h3>
+                  </div>
+                  <div class="text-body-sm-regular" style="display: flex; justify-content: space-between; color: var(--color-text-neutral-secondary)">
+                    <span>Dibuat</span>
+                    <span data-history-created>—</span>
+                  </div>
+                  <div class="text-body-sm-regular" style="display: flex; justify-content: space-between; color: var(--color-text-neutral-secondary)">
+                    <span>Diperbarui</span>
+                    <span data-history-updated>—</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="height: var(--spacing-6)"></div>
+
+            <div class="admin-form-actions">
+              <a class="button button--ghost" href="admin-produk.html">Batal</a>
+              <button type="submit" class="button button--blue">
+                <svg class="icon" aria-hidden="true"><use href="#i-floppy-disk" /></svg>
+                <span data-form-submit-label>Simpan Produk</span>
+              </button>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

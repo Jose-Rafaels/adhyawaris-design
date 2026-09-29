@@ -35,6 +35,30 @@
   }
 }
 
+/*
+ * Blue and ghost variants — original additions for the admin panel (no
+ * Figma admin screens exist to extract them from). The red .button reads as
+ * a marketing CTA on the public site, so admin actions use blue instead to
+ * avoid looking like a destructive/delete action.
+ */
+.button--blue {
+  background: var(--color-surface-brand-blue-strong);
+}
+
+.button--blue:hover {
+  background: var(--color-surface-brand-blue-strong-hover);
+}
+
+.button--ghost {
+  border: 1px solid var(--color-border-neutral-normal);
+  background: var(--color-surface-neutral-primary-normal);
+  color: var(--color-text-neutral-primary);
+}
+
+.button--ghost:hover {
+  background: var(--color-surface-neutral-secondary-medium);
+}
+
 /* ---- Badge / Tag / Chip ---- */
 
 .badge {

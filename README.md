@@ -21,6 +21,13 @@ All five pages share the same Navbar, CTA and Footer sections (copied markup,
 not a template include — see **Shared sections** below); Consultation and
 About Us also share the same photo hero component.
 
+Alongside the public site, there's a small **Admin panel** (`admin-login.html`,
+`admin-produk.html`, `admin-produk-form.html`) for managing the product catalog.
+Unlike the five pages above, this isn't a Figma implementation — the Figma file
+has no admin/dashboard screens (checked via `get_metadata` before starting) — it's
+original design work, built to reuse the same token/component system. See
+**Admin panel** below for scope and what's real vs. demo data.
+
 ## Stack
 
 Plain **HTML + CSS**, with a small vanilla JavaScript file only where behaviour is
@@ -44,6 +51,9 @@ listing-produk.html      # Listing Product page markup + icon sprite
 detail-produk.html       # Product Detail page markup + icon sprite
 tentang-kami.html        # About Us page markup + icon sprite
 konsultasi.html          # Consultation page markup + icon sprite
+admin-login.html         # Admin panel: login screen
+admin-produk.html        # Admin panel: product list
+admin-produk-form.html   # Admin panel: add/edit product form (mode switches on the `?id=` query param)
 assets/
   css/
     tokens.css           # Style Guide → CSS variables (light + dark modes)
@@ -55,7 +65,10 @@ assets/
     detail.css                # Product Detail page: gallery, product info, tabs, spec table, application/support grids
     about.css                  # About Us page: photo hero (shared with Consultation), profile + value cards, visi/misi, standar, team
     consultation.css            # Consultation page: form fields, WhatsApp button, sidebar cards, 3-step process, map card
-  js/main.js             # theme toggle, mobile menu, hero search, filter sheet, active-filter chips, tabs, gallery, consultation form
+    admin.css                    # Admin panel: sidebar + topbar shell, table, form, toggle, modal, login screen
+  js/
+    main.js               # theme toggle, mobile menu, hero search, filter sheet, active-filter chips, tabs, gallery, consultation form
+    admin.js                # admin theme toggle, sidebar drawer, delete-confirm modal, login form, product form
   fonts/                 # Geist (woff2)
   images/                # images (some are placeholders — see "Still to do") + favicon
 ```
@@ -128,6 +141,63 @@ the other files — search for the section's HTML comment
 `listing-produk.html`, `detail-produk.html`, `tentang-kami.html` and
 `konsultasi.html`.
 
+## Admin panel
+
+Original design, not a Figma implementation — confirmed via `get_metadata` that
+the source file has no admin/dashboard screens before building this, so there
+was nothing to extract. Built per the requested scope (product list through
+product detail, plus a login and an add/create screen) as real HTML pages,
+reusing `tokens.css`, `base.css` and `components.css` (`.button`, `.badge`,
+`.sr-only`, the text-style utility classes) for visual continuity with the
+public site, with its own `admin.css` for the sidebar + topbar shell, table,
+form, toggle and modal, and `admin.js` for its interactions. `noindex, nofollow`
+is set on all three admin pages since they're not meant to be crawled; there's
+no link to the admin panel from the public site's navbar — the three pages are
+reached directly by URL.
+
+- **`admin-login.html`** — email/password form (password visibility toggle,
+  native required-field validation) over a split layout: a brand panel reusing
+  `.brand-surface` and the existing `cta-bg.webp` photo (there's no dedicated
+  login photo), and the form card. No backend: any submission that passes
+  browser validation redirects to `admin-produk.html`, and the on-page copy
+  says so explicitly rather than pretending otherwise.
+- **`admin-produk.html`** — the product list: 4 summary stat cards, a
+  search/status/category toolbar (not wired to real filtering — same "static
+  page" caveat as the public Listing page's filter panel), an 8-row table, and
+  a delete-confirmation modal (Escape/backdrop/Cancel to dismiss, Confirm
+  removes the row from the DOM). The 8 rows are demo data: real product-line
+  names already established elsewhere on the site (HPLC, AAS, UV-Vis
+  Spektrofotometer, Timbangan Analitik — from the About Us Profile section) but
+  invented SKUs/TKDN percentages/statuses, and every thumbnail reuses the
+  site's one real product photo (`product-uv-vis.png`) since there's no second
+  product photo to draw from.
+- **`admin-produk-form.html`** — a single form used for both Add and Edit:
+  `admin.js` reads the `?id=` query param and switches the page title,
+  breadcrumb, subtitle and submit-button label, and (edit mode only) fills the
+  fields with one hardcoded demo product, shows an existing-image preview, and
+  fills the "Riwayat" (created/updated) dates — standing in for a real
+  fetch-by-id, since every edit link on the list page opens the same sample
+  record here. The image dropzone accepts a real file and shows a live
+  preview via `URL.createObjectURL` (removable); nothing is uploaded anywhere.
+  Saving (Add or Edit) redirects back to the product list, same no-backend
+  caveat as the login form.
+
+New tokens added for this panel only (light values are original design
+choices, not extracted; dark values are derived the same way the rest of the
+site's estimated dark tokens are — see the **Design tokens** section above):
+`--color-text-status-success`, `--color-surface-status-success-soft`,
+`--color-border-status-success` (the "Dipublikasikan" status badge) and
+`--color-surface-brand-blue-strong-hover` (hover state for the new
+`.button--blue` variant, used for the admin panel's primary actions instead of
+the public site's red `.button` so Save/Login don't read as a delete action).
+Both new button variants (`.button--blue`, `.button--ghost`) live in the
+shared `components.css` since they're generically reusable, not admin-only.
+
+The sidebar's "Dashboard" and "Artikel & Berita" nav items are visibly
+disabled with a "Segera" (soon) badge — real nav destinations that are out of
+scope for this pass, kept visible so the shell reads as a real product rather
+than a single hidden screen.
+
 ## Still to do
 
 - **Images.** The hero photo, product render, article photo and the Core Value/CTA
@@ -199,3 +269,10 @@ the other files — search for the section's HTML comment
   (SUV-1202), not a per-product template wired to real product data.
 - Partner logos in the Home hero's social-proof marquee are text placeholders (the Figma uses "Logoipsum" placeholders too).
 - The Produk dropdown and the ID/EN language switcher are visual only (no menu content or translations yet).
+- **Admin panel** has no backend — see its own section above for exactly what
+  each page fakes. Beyond that: the Dashboard and Artikel & Berita sidebar
+  destinations aren't built (intentionally out of scope, marked "Segera"); the
+  product list's search/status/category toolbar and pagination aren't wired to
+  real data (only 8 demo rows exist, all on one page); and the 8 products all
+  reuse the one real product photo on the site, so a real media library would
+  be needed before this is more than a mockup.

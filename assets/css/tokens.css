@@ -103,10 +103,21 @@
 
   /* Not defined in Figma — derived for interaction states. */
   --color-surface-brand-red-hover: #b91c1c;
+  --color-surface-brand-blue-strong-hover: #1e3a8a;
   --color-focus-ring: #60a5fa;
 
   /* Gradient accent used on highlighted heading words. */
   --gradient-accent: linear-gradient(90deg, #60a5fa 0%, #002d62 100%);
+
+  /*
+   * Admin panel only — there is no admin/dashboard screen in the Figma file
+   * (confirmed via get_metadata before building it), so these status-badge
+   * colors are original additions, not extracted values. Named and scaled
+   * like the rest of the palette so they read as part of the same system.
+   */
+  --color-text-status-success: #16a34a;
+  --color-surface-status-success-soft: #f0fdf4;
+  --color-border-status-success: #86efac;
 }
 
 :root[data-theme='dark'] {
@@ -140,6 +151,11 @@
   --color-surface-brand-red-hover: #dc2626;
 
   --gradient-accent: linear-gradient(90deg, #93c5fd 0%, #60a5fa 100%);
+
+  /* Admin panel status badges — see the light-mode block for context. */
+  --color-text-status-success: #4ade80;
+  --color-surface-status-success-soft: #052e1b;
+  --color-border-status-success: #166534;
 }
 
 @media (max-width: 1199px) {
